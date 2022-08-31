@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "composite": false,
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "inlineSources": false,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "lib": [
+      "ES2021",
+      "dom"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "preserveWatchOutput": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ES5",
+    "noImplicitAny": false,
+    "noImplicitReturns": false
+  },
+  "exclude": [
+    "_old",
+    "build",
+    "dist",
+    "node_modules"
+  ],
+  "include": [
+    "."
+  ]
+}

@@ -1,0 +1,257 @@
+.rmsc {
+  --rmsc-main: #4285f4;
+  --rmsc-hover: #f1f3f5;
+  --rmsc-selected: #e2e6ea;
+  --rmsc-border: #ccc;
+  --rmsc-gray: #aaa;
+  --rmsc-bg: #fff;
+  --rmsc-p: 10px;
+  --rmsc-radius: 4px;
+  --rmsc-h: 32px;
+}
+
+.rmsc * {
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.rmsc .gray {
+  color: var(--rmsc-gray);
+}
+
+.rmsc .dropdown-container.dropdown-header-border-red{
+  border: 2px solid #E60012;
+}
+
+.rmsc .dropdown-content {
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  padding-top: 8px;
+  height: auto;
+  width: auto;
+  overflow: visible;
+}
+
+.rmsc .dropdown-content-advanced-filter {
+  position: absolute;
+  z-index: 2;
+  top: 125%;
+  width: 200px;
+  left: -205px;
+}
+
+.rmsc .dropdown-content .panel-content,
+.rmsc .dropdown-content-advanced-filter .panel-content{
+  overflow: hidden;
+  border-radius: var(--rmsc-radius);
+  background: var(--rmsc-bg);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 11px rgba(0, 0, 0, 0.1);
+  width: 200px;
+}
+
+.rmsc .dropdown-container {
+  position: relative;
+  outline: 0;
+  background-color: var(--rmsc-bg);
+  height: 32px;
+  border: 1px solid #C1C1C1;
+  border-radius: 4px;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: center;
+}
+
+.rmsc .dropdown-container[aria-disabled="true"]:focus-within {
+  box-shadow: var(--rmsc-gray) 0 0 0 1px;
+  border-color: var(--rmsc-gray);
+}
+
+.rmsc .dropdown-container:focus-within {
+  box-shadow: black 0 0 0 1px;
+  border: 1px solid black;
+}
+
+.rmsc .dropdown-heading {
+  position: relative;
+  padding: 0 var(--rmsc-p);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: var(--rmsc-h);
+  cursor: default;
+  outline: 0;
+}
+
+.rmsc .dropdown-heading .dropdown-heading-value {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  margin-right: 2px;
+}
+
+.rmsc .clear-selected-button {
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+  display: flex;
+}
+
+.rmsc .apply-button,
+.rmsc .apply-clear-button  {
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;  
+  display: flex;
+}
+
+.rmsc .apply{
+  width: 100%;
+  border: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.rmsc .options {
+  max-height: 260px;
+  overflow-y: auto;
+  margin: 0;
+  padding-left: 0;
+}
+
+.rmsc .options li {
+  list-style: none;
+  margin: 0;
+}
+
+.rmsc .select-item {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  padding: var(--rmsc-p);
+  outline-offset: -1px;
+  outline-color: var(--rmsc-primary);
+}
+
+.rmsc .select-item:hover {
+  background: var(--rmsc-bg);
+}
+
+.rmsc .select-item.selected {
+  background: var(--rmsc-bg);
+}
+
+.rmsc .no-options {
+  padding: var(--rmsc-p);
+  text-align: center;
+  color: var(--rmsc-gray);
+}
+
+.rmsc .search {
+  width: 100%;
+  position: relative;
+  height: 38px;
+  margin-top: 10px;
+  border: 2px solid #8A8A8A;
+  border-radius: 6px;
+  padding: 2px 2px 2px 2px;
+  background-color: #FFFFFF;
+}
+
+.rmsc .search input {
+  background: none;
+  height: 32px;
+  padding: 0 var(--rmsc-p);
+  width: 80%;
+  outline: 0;
+  border: 0;
+  font-size: 1em;
+  float: right;
+}
+
+.rmsc .search input:focus {
+  background: var(--rmsc-bg);
+}
+
+.rmsc .search-clear-button {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: none;
+  border: 0;
+  padding: 0 calc(var(--rmsc-p) / 2);
+}
+
+.rmsc .search-clear-button [hidden] {
+  display: none;
+}
+
+.rmsc .item-renderer {
+  display: flex;
+  align-items: baseline;
+}
+
+.rmsc .item-renderer input {
+  margin: 0;
+  margin-right: 5px;
+}
+
+.rmsc .item-renderer.disabled {
+  opacity: 0.5;
+}
+
+.rmsc .spinner {
+  animation: rotate 2s linear infinite;
+}
+
+.rmsc .spinner .path {
+  stroke: var(--rmsc-border);
+  stroke-width: 4px;
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+.rmsc .advanced-filter-div {
+  height: 30px;
+  display: flex;
+  border-bottom: 2px solid #C1C1C1;
+}
+
+.rmsc .select-panel-label{
+  margin-top: 12px;
+}
+
+.rmsc .select-panel{
+  padding: 15px;
+}
+
+.rmsc .select-panel-label {
+  margin-top: 12px;
+}
