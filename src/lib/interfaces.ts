@@ -40,5 +40,6 @@ export interface SelectProps {
   selectPanelLabel?: string;
   showSidePanelComponent?: boolean;
   sidePanelLabel?: string;
-  SidePanelComponent?: () => JSX.Element;
+  SidePanelComponent?: ({ setExpanded }) => JSX.Element;
+  CustomDropdownHeader?: () => JSX.Element;
 }

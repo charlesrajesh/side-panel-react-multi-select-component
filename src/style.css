@@ -33,16 +33,7 @@
   overflow: visible;
 }
 
-.rmsc .dropdown-content-advanced-filter {
-  position: absolute;
-  z-index: 2;
-  top: 125%;
-  width: 200px;
-  left: -205px;
-}
-
-.rmsc .dropdown-content .panel-content,
-.rmsc .dropdown-content-advanced-filter .panel-content{
+.rmsc .dropdown-content .panel-content{
   overflow: hidden;
   border-radius: var(--rmsc-radius);
   background: var(--rmsc-bg);
@@ -238,20 +229,10 @@
   }
 }
 
-.rmsc .advanced-filter-div {
-  height: 30px;
-  display: flex;
-  border-bottom: 2px solid #C1C1C1;
-}
-
 .rmsc .select-panel-label{
   margin-top: 12px;
 }
 
 .rmsc .select-panel{
   padding: 15px;
-}
-
-.rmsc .select-panel-label {
-  margin-top: 12px;
 }

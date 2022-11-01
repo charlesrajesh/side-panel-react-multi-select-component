@@ -1,10 +1,10 @@
 {
   "name": "side-panel-react-multi-select-component",
-  "version": "0.0.1",
+  "version": "0.0.7",
   "description": "Simple and lightweight multiple selection dropdown component with checkboxes, search and select-all, side panel component",
   "author": "charles",
   "license": "MIT",
-  "repository": "https://github.com/hc-oss/react-multi-select-component#readme",
+  "repository": "https://github.com/charlesrajesh/side-panel-react-multi-select-component",
   "main": "./dist/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/index.d.ts",

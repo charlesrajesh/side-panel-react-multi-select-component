@@ -11,7 +11,7 @@ other than existing props added below props & their usecase
 6.SidePanelComponent - sidepanel content component passed as prop
 
 
-Simple and lightweight multiple selection dropdown component with `checkboxes`, 
+Simple and lightweight multiple selection dropdown component with `checkboxes`,7.CustomDropdownHeader- custom header for the dropdown . 
 - This project gets inspiration and several pieces of logical code from [react-multiple-select](https:github.com/Khan/react-multi-select/)
 - [react-multi-select-component](https:github.com/hc-oss/react-multi-select-component)
 - [TypeScript](https:github.com/microsoft/typescript)

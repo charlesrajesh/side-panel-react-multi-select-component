@@ -26,7 +26,7 @@ enum FocusType {
   NONE = -1,
 }
 
-const SelectPanel = () => {
+const SelectPanel = ({ setExpanded }) => {
   const {
     t,
     onChange,
@@ -196,6 +196,7 @@ const SelectPanel = () => {
     e.stopPropagation();
     onChange([]);
     onClear([])
+    setExpanded(false);
   };
 
   return (
@@ -280,7 +281,7 @@ const SelectPanel = () => {
                 <button
                   type="button"
                   className="apply-button"
-                  onClick={(e) => {onApply(value) }}
+                  onClick={(e) => { onApply(value); setExpanded(false); }}
                   aria-label={t("applySelection")}
                 >
                   APPLY
@@ -294,7 +295,7 @@ const SelectPanel = () => {
         <div className="dropdown-content-advanced-filter">
           <div className="panel-content">
             <div className="select-panel" role="listbox">
-              <SidePanel />
+              <SidePanel setExpanded={setExpanded}/>
             </div>
           </div>
         </div>

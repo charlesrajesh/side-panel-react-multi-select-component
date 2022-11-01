@@ -30,7 +30,8 @@ const Dropdown = () => {
     defaultIsOpen,
     ClearSelectedIcon,
     closeOnChangedValue,
-    onClear
+    onClear,
+    CustomDropdownHeader,
   } = useMultiSelect();
 
   useEffect(() => {
@@ -44,6 +45,7 @@ const Dropdown = () => {
   const [hasFocus, setHasFocus] = useState(false);
 
   const wrapper: any = useRef();
+  const HeaderContent = CustomDropdownHeader || DropdownHeader
 
   useDidUpdateEffect(() => {
     onMenuToggle && onMenuToggle(expanded);
@@ -98,7 +100,7 @@ const Dropdown = () => {
   const handleMouseLeave = () => handleHover(false);
 
   const toggleExpanded = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     e.stopPropagation();
     isInternalExpand && setExpanded(isLoading || disabled ? false : !expanded);
   };
@@ -124,12 +126,12 @@ const Dropdown = () => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="dropdown-heading" onClick={(e)=>toggleExpanded(e)}>
+      <div className="dropdown-heading" onClick={(e) => toggleExpanded(e)}>
         <div className="dropdown-heading-value">
-          <DropdownHeader />
+          <HeaderContent />
         </div>
         {isLoading && <Loading />}
-        {value.length > 0 && ClearSelectedIcon !== null ?(
+        {value.length > 0 && ClearSelectedIcon !== null ? (
           <button
             type="button"
             className="clear-selected-button"
@@ -139,12 +141,12 @@ const Dropdown = () => {
           >
             {ClearSelectedIcon || <Cross />}
           </button>
-        ):
-        <FilterIcon />
+        ) :
+          <FilterIcon />
         }
       </div>
       {expanded && (
-        <SelectPanel />
+        <SelectPanel setExpanded={setExpanded} />
       )}
     </div>
   );
